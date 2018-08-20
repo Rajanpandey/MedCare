@@ -253,10 +253,10 @@ mysqli_close($conn);
     </thead>
     <tbody>
      <?php
-      if($page==$total_pages && ($total_records % 9)!=0){
-          $n=$total_records % 9;
+      if($page==$total_pages && ($total_records % 10)!=0){
+          $n=$total_records % 10;
       }else{
-          $n=9;
+          $n=10;
       }
       
       for($i=0; $i<$n; $i=$i+1){

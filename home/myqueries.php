@@ -241,16 +241,16 @@ mysqli_close($conn);
     </thead>
     <tbody>
      <?php
-      if($page==$total_pages && ($total_records % 9)!=0){
-          $n=$total_records % 9;
+      if($page==$total_pages && ($total_records % 10)!=0){
+          $n=$total_records % 10;
       }else{
-          $n=9;
+          $n=10;
       }
       
       for($i=0; $i<$n; $i=$i+1){
     ?>
       <tr>
-        <td><a href="query.php?url=<?php echo $array[$i]['url']?>"><?php echo $array[$i]['title']; ?></a></td>
+        <td><a href="query/query.php?url=<?php echo $array[$i]['url']?>"><?php echo $array[$i]['title']; ?></a></td>
         <td><a href="deletequery.php?url=<?php echo $array[$i]['url']?>"><button class="btn btn-danger">Delete</button></a></td>
       </tr>
       <?php

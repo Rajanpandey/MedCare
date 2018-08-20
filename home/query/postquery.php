@@ -1,4 +1,12 @@
 <?php
+include('../../session.php');
+if(!isset($_SESSION['login_user'])){
+    header("location: ../../index.php");
+}
+?>
+
+
+<?php
 $conn=mysqli_connect("fdb20.your-hosting.net", "2749126_socman", "rkp12345", "2749126_socman");
 
 //Used mysqli_real_escape_string o avoid apostrophe conflicts

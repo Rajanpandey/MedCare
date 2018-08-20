@@ -49,9 +49,10 @@ center a:visited i{
 <div id="google_translate_element" style="float: right;"></div>
 
 <br/><br/><br/>
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+		    <script id="cid0020000195765756231" data-cfasync="false" async src="https://goo.gl/ihjUrA" style="width:;height:;">{"handle":"medcare1","arch":"js","styles":{"a":"0084ef","b":100,"c":"FFFFFF","d":"FFFFFF","k":"0084ef","l":"0084ef","m":"0084ef","n":"FFFFFF","p":"11.79","q":"0084ef","r":100,"usricon":0.83,"surl":0,"fwtickm":1}}</script>
 		</div>			
 			
 	</div>
@@ -66,5 +67,10 @@ function googleTranslateElementInit() {
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-
+<script>
+    var w=window.innerWidth;  
+    var h=window.innerHeight;    
+    document.getElementById("cid0020000195765756231").style.width=w+"px";
+    document.getElementById("cid0020000195765756231").style.height=h+"px";
+</script>
 </html>
