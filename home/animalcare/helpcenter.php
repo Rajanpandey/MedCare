@@ -19,14 +19,15 @@ if(!isset($_SESSION['login_user'])){
 	<title>Home</title>
 </head>
 
-<style type="text/css">
-center a:link i{
-	color: black;
-}	
-
-center a:visited i{
-    color: black;
-}
+<style>
+      #map {
+        height: 900px;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
 </style>
 
 <body>
@@ -51,15 +52,22 @@ center a:visited i{
 <br/><br/><br/>
 <div class="container">
 	<div class="row">
-		<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-			<center><a href="https://goo.gl/maps/iZkx2jD467R2"><i class="fas fa-hospital fa-3x"></i><br/>Nearest help center</a><br/><br/><br/>
-			<a href=""><i class="fas fa-heartbeat fa-3x"></i><br/>Search disease by symptoms</a><br/><br/><br/></center>
-		</div>
-		<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-			<center><a href="calendar.php"><i class="fas fa-calendar-alt fa-3x"></i><br/>Vaccination calendar</a><br/><br/><br/></center>
-		</div>
-			
-			
+		<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+		
+<div id="map"></div>
+<script>
+function initMap() {
+  var uluru = {lat: 18.5891298, lng: 73.80072249999999};
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: uluru});
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoL9ksegYK0anVcnOdC92WA97_Mpz5c34&callback=initMap">
+</script>
+    
+		</div>			
 	</div>
 </div>
 
@@ -71,5 +79,6 @@ function googleTranslateElementInit() {
 }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
 </html>

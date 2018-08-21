@@ -42,13 +42,13 @@ if(!isset($_SESSION['login_user'])){
 	<div class="row">
 		<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
 			<center><a href=""><img src="../../assets/icons/animals/icons8-dog-50.png"><br/>Dog</a><br/><br/><br/>
-			<a href=""><img src="../../assets/icons/animals/icons8-cow-50.png"><br/>Cow</a><br/><br/><br/>
-			<a href=""><img src="../../assets/icons/animals/icons8-cat-50.png"><br/>Cat</a><br/><br/><br/></center>
+			<a href="animals/frog.php"><img src="../../assets/icons/animals/icons8-frog-50.png"><br/>Frog</a><br/><br/><br/>
+			<a href="animals/fish.php"><img src="../../assets/icons/animals/icons8-fish-50.png"><br/>Tropical Fish</a><br/><br/><br/></center>
 		</div>
 		<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-			<center><a href=""><img src="../../assets/icons/animals/icons8-chicken-50.png"><br/>Hen</a><br/><br/><br/>
-			<a href=""><img src="../../assets/icons/animals/icons8-pig-50.png"><br/>Pig</a><br/><br/><br/>
-			<a href=""><img src="../../assets/icons/animals/icons8-horse-50.png"><br/>Horse</a><br/><br/><br/></center>
+			<center><a href=""><img src="../../assets/icons/animals/icons8-cat-50.png"><br/>Cat</a><br/><br/><br/>
+			<a href="animals/pig.php"><img src="../../assets/icons/animals/icons8-pig-50.png"><br/>Pig</a><br/><br/><br/>
+			<a href="animals/crab.php"><img src="../../assets/icons/animals/icons8-crab-50.png"><br/>Crab</a><br/><br/><br/></center>
 		</div>
 			
 			
