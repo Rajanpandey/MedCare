@@ -1,8 +1,7 @@
 <?php
 include('../session.php');
-
 if(!isset($_SESSION['login_user'])){
-    header("location: ../index.html");
+    header("location: ../index.php");
 }
 ?>
 
@@ -13,13 +12,16 @@ if(mysqli_connect_error()){
     die('Connect Error('.mysqli_connect_errno().')'.mysqli_connect_error());
 }
 
-$sql="SELECT * FROM users WHERE mobile='$login_session'";
+$url=$_GET["url"];
+$sql="SELECT * FROM notices WHERE url='$url'";
 $result=mysqli_query($conn, $sql);
-$array1 = array();
-while($row=$result->fetch_array()){
+if($result!=NULL){
+    $array = array();
+    while($row=mysqli_fetch_assoc($result)){
          $array[]=$row;
+    }
 }
-$conn->close();
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -29,28 +31,17 @@ $conn->close();
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="../assets/myjs/navbar.js"></script>
 	<link rel="stylesheet" href="../assets/mycss/navbar.css">
 	<title>Home</title>
 </head>
-
-<style type="text/css">
-center a:link i{
-	color: black;
-}	
-
-center a:visited i{
-    color: black;
-}
-
-</style>
 
 <body>
 <nav class="navbar navbar-expand-sm bg-light sticky-top">
 
  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="home.php"><i class="fas fa-home"></i>   Home</a>
   <a href="myprofile.php"><i class="fas fa-user"></i>   My Profile</a>
   <a href="myqueries.php"><i class="fas fa-question-circle"></i>   My Queries</a>
   <a href="logout.php"><i class="fas fa-sign-out-alt"></i>   Logout</a>
@@ -64,36 +55,22 @@ center a:visited i{
 </nav>
 <div id="google_translate_element" style="float: right;"></div>
 
-<br/>
-
+<br/><br/><br/>
 <div class="container">
 	<div class="row">
-        <br/><div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
-        <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
-            
-        </div>
-        <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
-        
-	    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <a href="notice.php"><button class="btn btn-outline-info btn-block">Notice Board</button></a><br/>
-            <center><h2>Welcome <?php echo $array[0]['name']; ?></h2></center><br/>      
-        </div><br/><br/><br/><br/><br/>
-        
-		<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-			<center><a href="query/postaquery.php"><i class="fas fa-question fa-3x"></i><br/>Post a query</a><br/><br/><br/>
-			<a href="animalcare/animalcare.php"><i class="fas fa-hospital fa-3x"></i><br/>Animal Care</a><br/><br/><br/>
-            <a href="contacts/contact.php"><i class="fas fa-address-book fa-3x"></i><br/>Important contacts</a><br/><br/><br/></center>
-		</div>
-		<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-			<center><a href="https://goo.gl/JZVCtW"><i class="fas fa-comments fa-3x"></i><br/>Get help on chat</a><br/><br/><br/>
-            <a href="knowanimal/knowyouranimal.php"><i class="fas fa-info-circle fa-3x"></i><br/>Know your animal</a><br/><br/><br/>
-			<a href="feedback/feedback.php"><i class="fas fa-comment-alt fa-3x"></i><br/>Feedback to government</a><br/><br/><br/></center>
-		</div>
-			
-			
-	</div>
+		<div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
+        <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
+           <h2><?php echo $array[0]['title']; ?></h2><hr/>
+            <p><?php echo $array[0]['body']; ?></p>
+            <br/><br/><br/>       
+       </div>
+    </div>
 </div>
+            
+        
+<div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
 
+<br/><br/>
 </body>
 
 <script>
