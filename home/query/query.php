@@ -60,8 +60,15 @@ mysqli_close($conn);
 	<div class="row">
 		<div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
         <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
-           <h2><?php echo $array[0]['title']; ?></h2><hr/>
-            <p><?php echo $array[0]['body']; ?></p>
+           <h2><?php echo $array[0]['title']; ?></h2>
+           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="text-align: right">
+                  <?php
+                    $originalDate = $array[$i]['date'];
+                    $newDate = date("jS-F-Y H:i", strtotime($originalDate));
+                    echo $array[0]['date'];
+                  ?>
+            </div>
+            <hr/><p><?php echo $array[0]['body']; ?></p>
             <br/><br/><br/>     
        
        

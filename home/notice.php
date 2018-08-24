@@ -38,8 +38,6 @@ if($result!=NULL){
          $issues++;
     }
 }
-
-
 mysqli_close($conn);
 
 ?>
@@ -248,10 +246,12 @@ mysqli_close($conn);
       }
       
       for($i=0; $i<$n; $i=$i+1){
+            $originalDate = $array[$i]['date'];
+            $newDate = date("jS-F-Y H:i", strtotime($originalDate));
     ?>
       <tr>
         <td><a href="notices.php?url=<?php echo $array[$i]['url']?>"><?php echo $array[$i]['title']; ?></a></td>
-        <td><?php echo $array[$i]['date']?></td>
+        <td><?php echo $newDate?></td>
       </tr>
       <?php
         }  
