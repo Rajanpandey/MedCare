@@ -85,7 +85,7 @@ center a:visited i{
             <a href="contacts/contact.php"><i class="fas fa-address-book fa-3x"></i><br/>Important contacts</a><br/><br/><br/></center>
 		</div>
 		<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-			<center><a href="https://goo.gl/JZVCtW"><i class="fas fa-comments fa-3x"></i><br/>Get help on chat</a><br/><br/><br/>
+			<center><a href="chat/chat.php"><i class="fas fa-comments fa-3x"></i><br/>Get help on chat</a><br/><br/><br/>
             <a href="knowanimal/knowyouranimal.php"><i class="fas fa-info-circle fa-3x"></i><br/>Know your animal</a><br/><br/><br/>
 			<a href="feedback/feedback.php"><i class="fas fa-comment-alt fa-3x"></i><br/>Feedback to government</a><br/><br/><br/></center>
 		</div>

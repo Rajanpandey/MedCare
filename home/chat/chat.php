@@ -12,17 +12,17 @@ if(mysqli_connect_error()){
     die('Connect Error('.mysqli_connect_errno().')'.mysqli_connect_error());
 }
 
-$sql="SELECT * FROM contacts ORDER BY priority ASC";
+$sql="SELECT * FROM users WHERE mobile='$login_session'";
 $result=mysqli_query($conn, $sql);
-if($result!=NULL){
-    $array = array();
-    while($row=mysqli_fetch_assoc($result)){
+$array1 = array();
+while($row=$result->fetch_array()){
          $array[]=$row;
-    }
 }
-$totalcontacts =mysqli_num_rows($result);
+
 mysqli_close($conn);
+
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -33,14 +33,26 @@ mysqli_close($conn);
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	<script src="../../assets/myjs/navbar.js"></script>
 	<link rel="stylesheet" href="../../assets/mycss/navbar.css">
+	<link rel="stylesheet" href="../../assets/mycss/myprofile.css">
 	<title>Home</title>
 </head>
+
+<style type="text/css">
+center a:link i{
+	color: black;
+}	
+
+center a:visited i{
+    color: black;
+}
+
+</style>
 
 <body>
 <nav class="navbar navbar-expand-sm bg-light sticky-top">
 
  <div id="mySidenav" class="sidenav">
-  <a href="../javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="../home.php"><i class="fas fa-home"></i>   Home</a>
   <a href="../myprofile.php"><i class="fas fa-user"></i>   My Profile</a>
   <a href="../myqueries.php"><i class="fas fa-question-circle"></i>   My Queries</a>
@@ -58,37 +70,25 @@ mysqli_close($conn);
 <br/><br/><br/>
 <div class="container">
 	<div class="row">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="overflow-x:auto;">
-        <center><h2>Important Contacts</h2></center><br/>
-    <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Position</th>
-        <th>E-Mail</th>
-        <th>Phone</th>
-      </tr>
-    </thead>
-    <tbody>
-     <?php  
-      for($i=0; $i<$totalcontacts; $i=$i+1){
-    ?>
-      <tr>
-        <td><?php echo $array[$i]['name']; ?></td>
-        <td><?php echo $array[$i]['post']; ?></td>
-        <td><a href="mailto:<?php echo $array[$i]['email']?>"><?php echo $array[$i]['email']; ?></a></td>
-        <td><a href="tel:<?php echo $array[$i]['phone']?>"><?php echo $array[$i]['phone']; ?></a></td>
-      </tr>
-      <?php
-        }  
-     ?> 
-    </tbody>
-  </table>
-            <br/><br/><br/>       
-       </div>
+	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <center><h2>Chat Rooms:</h2></center><br/><br/><br/>
+<?php
+ if($array[0]['profiletype']=='Medical Professional'){
+?>  
+    <center><a href="https://goo.gl/v36f4r"><i class="fas fa-comment fa-3x"></i><br/>Medical Professionals</a></center><br/><br/><br/><br/>
+<?php
+}else{
+?>   
+   <center><a href="https://goo.gl/5eWj7d"><i class="fas fa-comment fa-3x"></i><br/>Animal Owners</a></center><br/><br/><br/><br/>
+    
+<?php  
+ }
+?>   
+        <center><a href="https://goo.gl/JZVCtW"><i class="fas fa-comments fa-3x"></i><br/>Animal Owner and <br/>
+        Medical Professional</a></center>
     </div>
+  </div>
 </div>
-<br/><br/>
 </body>
 
 <script>
