@@ -1,7 +1,7 @@
 <?php
     require('textlocal.class.php');
 
-    $textlocal = new Textlocal('7720918651', 'Shreya123', false);
+    $textlocal = new Textlocal(false, false, 'UhtsatiqdvA-xBLdz4MJvpdXBoXYyxnL4ZPyQbuNWj');
     $mobile=$_POST['mobile'];
 
     $numbers = array($mobile);
