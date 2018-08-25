@@ -1,84 +1,82 @@
-<?php
-include('../../session.php');
-
-if(!isset($_SESSION['login_user'])){
-    header("location: ../../index.html");
-}
-?>
-
-
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">    
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-	<script src="../../assets/myjs/navbar.js"></script>
-	<link rel="stylesheet" href="../../assets/mycss/navbar.css">
-	<title>Home</title>
-</head>
-
-<style>
-      #map {
-        height: 900px;
-      }
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-</style>
-
-<body>
-<nav class="navbar navbar-expand-sm bg-light sticky-top">
-
- <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="../home.php"><i class="fas fa-home"></i>   Home</a>
-  <a href="../myprofile.php"><i class="fas fa-user"></i>   My Profile</a>
-  <a href="../myqueries.php"><i class="fas fa-question-circle"></i>   My Queries</a>
-  <a href="../logout.php"><i class="fas fa-sign-out-alt"></i>   Logout</a>
-</div>
-
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link"><i class="fas fa-bars button-collapse" onclick="openNav()"></i></a>
-    </li>
-  </ul>  
-</nav>
-<div id="google_translate_element" style="float: right;"></div>
-
-<br/><br/><br/>
-<div class="container">
-	<div class="row">
-		<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-		
-<div id="map"></div>
+   
+   <head>
+      <script src = "https://maps.googleapis.com/maps/api/js"></script>
+      
+      <script>
+         function loadMap() {
+			
+            var mapOptions = {
+               center:new google.maps.LatLng(21.240092, 81.648563),
+               zoom:13
+            }
+				
+            var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
+            
+            var marker1 = new google.maps.Marker({
+               position: new google.maps.LatLng(21.228382, 81.651015),
+               map: map,
+            });
+            
+            var marker2 = new google.maps.Marker({
+               position: new google.maps.LatLng(21.234841, 81.653758),
+               map: map,
+            });
+             
+            var marker3 = new google.maps.Marker({
+               position: new google.maps.LatLng(21.239347, 81.665811),
+               map: map,
+            });
+             
+            var marker4 = new google.maps.Marker({
+               position: new google.maps.LatLng(21.240995, 81.666930),
+               map: map,
+            });
+             
+            var marker5 = new google.maps.Marker({
+               position: new google.maps.LatLng(21.237296, 81.644880),
+               map: map,
+            });
+             
+            var marker6 = new google.maps.Marker({
+               position: new google.maps.LatLng(21.235782, 81.638818),
+               map: map,
+            });
+             
+            var marker7 = new google.maps.Marker({
+               position: new google.maps.LatLng(21.246276, 81.673968),
+               map: map,
+            });
+             
+            var marker8 = new google.maps.Marker({
+               position: new google.maps.LatLng(21.238405, 81.634378),
+               map: map,
+            });
+             
+            var marker9 = new google.maps.Marker({
+               position: new google.maps.LatLng(21.252298, 81.664333),
+               map: map,
+            });
+             
+            var marker10 = new google.maps.Marker({
+               position: new google.maps.LatLng(21.252331, 81.668195),
+               map: map,
+            });
+            
+         }
+      </script>
+      
+   </head>
+   
+   <body onload = "loadMap()">
+      <div id = "sample" style = "width:; height:;"></div>
+   </body>
+   
 <script>
-function initMap() {
-  var uluru = {lat: 18.5891298, lng: 73.80072249999999};
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
-  var marker = new google.maps.Marker({position: uluru, map: map});
-}
+    var w=window.innerWidth;    
+    var h=window.innerHeight;    
+    document.getElementById("sample").style.height=w+"px";
+    document.getElementById("sample").style.height=h+"px";
 </script>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoL9ksegYK0anVcnOdC92WA97_Mpz5c34&callback=initMap">
-</script>
-    
-		</div>			
-	</div>
-</div>
-
-</body>
-
-<script>
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-
 </html>

@@ -52,8 +52,8 @@ center a:visited i{
 <div class="container">
 	<div class="row">
 		<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-			<center><a href="https://goo.gl/maps/iZkx2jD467R2"><i class="fas fa-hospital fa-3x"></i><br/>Nearest help center</a><br/><br/><br/>
-			<a href=""><i class="fas fa-heartbeat fa-3x"></i><br/>Search disease by symptoms</a><br/><br/><br/></center>
+			<center><a href="helpcenter.php"><i class="fas fa-hospital fa-3x"></i><br/>Nearest help center</a><br/><br/><br/>
+			<a href="disease.php"><i class="fas fa-heartbeat fa-3x"></i><br/>Search disease by symptoms</a><br/><br/><br/></center>
 		</div>
 		<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
 			<center><a href="calendar.php"><i class="fas fa-calendar-alt fa-3x"></i><br/>Vaccination calendar</a><br/><br/><br/></center>
