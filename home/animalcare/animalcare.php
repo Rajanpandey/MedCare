@@ -56,7 +56,7 @@ center a:visited i{
 			<a href="disease.php"><i class="fas fa-heartbeat fa-3x"></i><br/>Search disease by symptoms</a><br/><br/><br/></center>
 		</div>
 		<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-			<center><a href="calendar.php"><i class="fas fa-calendar-alt fa-3x"></i><br/>Vaccination calendar</a><br/><br/><br/></center>
+			<center><a href=""><i class="fas fa-calendar-alt fa-3x"></i><br/>Vaccination calendar</a><br/><br/><br/></center>
 		</div>
 			
 			
