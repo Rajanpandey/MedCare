@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta charset="utf-8">
+	<title>MedCare</title>
+</head>
+
+
+<body>
+<div class="app"  style="display: none;">
+    <div id="deviceready" class="blink">
+        <p class="event listening"></p>
+        <p class="event received"></p>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+<script>
+var delayInMilliseconds = 1000; 
+setTimeout(function() {
+    window.location="online.html";
+}, delayInMilliseconds);    
+</script>
+</html>
